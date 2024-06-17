@@ -12,38 +12,38 @@ def header():
   print("This program calculates the distance between two geographic points")
   print("You will enter the latitude and longitude for each point in decimal degrees")
 
-  # write "get_location" function, get user input(latitude, longitude)
-  def get_location():
-    lat = float(input("Enter latitude in decimal degrees: "))
-    lon = float(input("Enter longitude in decimal degrees: "))
-    # Return lat and lon
-    return (lat, lon)
+# write "get_location" function, get user input(latitude, longitude)
+def get_location():
+  lat = float(input("Enter latitude in decimal degrees: "))
+  lon = float(input("Enter longitude in decimal degrees: "))
+  # Return lat and lon
+  return (lat, lon)
   
-  # write "distance" function to take in two points(args), calculate the distance
-  def distance(point1, point2):
-    r = 6371 # Radius of the earth in kilometers
-    lat1, lon1 = point1
-    lat2, lon2 = point2
+# write "distance" function to take in two points(args), calculate the distance
+def distance(point1, point2):
+ r = 6371 # Radius of the earth in kilometers
+ lat1, lon1 = point1
+ lat2, lon2 = point2
 
-    # Convert lat and long from degrees to radians
-    lat1 = radians(lat1)
-    lon1 = radians(lon1)
-    lat1 = radians(lat2)
-    lon2 = radians(lon2)
+ # Convert lat and long from degrees to radians
+ lat1 = radians(lat1)
+ lon1 = radians(lon1)
+ lat1 = radians(lat2)
+ lon2 = radians(lon2)
 
-    # Given formula 
-    a = sin((lat2 - lat1) / 2)**2 + cos(lat1) * cos(lat2) * sin((lon2 - lon1) / 2)**2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-    distance = R * c
+  # Given formula 
+ a = sin((lat2 - lat1) / 2)**2 + cos(lat1) * cos(lat2) * sin((lon2 - lon1) / 2)**2
+ c = 2 * atan2(sqrt(a), sqrt(1 - a))
+ distance = r * c
 
-    return distance
+ return distance
   
 # Main
 def main():
   # Call the header function
   header()
 
-  while true: 
+  while True: 
     # Get the first location 
     print("\nEnter the first location: ")
     point1 = get_location()
@@ -63,8 +63,8 @@ def main():
     if another != 'yes':
       break
 
-# Goodbye message and thanks
-print("\nThank you for using this program, Goodbye!")
+  # Goodbye message and thanks
+  print("\nThank you for using this program, Goodbye!")
 
 # Run main function 
 if _name_ == "_main_":
